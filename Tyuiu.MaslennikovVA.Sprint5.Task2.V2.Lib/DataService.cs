@@ -14,7 +14,7 @@ namespace Tyuiu.MaslennikovVA.Sprint5.Task2.V2.Lib
     {
         public string SaveToFileTextData(int[,] matrix)
         {
-            string path = $@"{Path.Combine("OutPutFileTask2.csv")}";
+            string path = Path.GetTempFileName();
 
             FileInfo fileInfo = new FileInfo(path);
             bool fileExists = fileInfo.Exists;
