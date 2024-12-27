@@ -14,7 +14,7 @@ namespace Tyuiu.MaslennikovVA.Sprint5.Task5.V29.Lib
                 double max;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    max = Convert.ToDouble(line);
+                    max = Convert.ToDouble(line.Replace(".",","));
                     if (max - Math.Round(max) == 0)
                     {
                         if (max % 100 == max && max % 10 != max)
