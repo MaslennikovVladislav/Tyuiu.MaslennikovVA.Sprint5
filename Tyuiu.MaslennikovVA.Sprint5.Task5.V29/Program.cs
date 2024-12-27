@@ -1,5 +1,5 @@
 ﻿using Tyuiu.MaslennikovVA.Sprint5.Task5.V29.Lib;
-namespace Tyuiu.MaslennikovVA.Sprint5.Task4.V26
+namespace Tyuiu.MaslennikovVA.Sprint5.Task5.V29
 {
     internal class Program
     {
