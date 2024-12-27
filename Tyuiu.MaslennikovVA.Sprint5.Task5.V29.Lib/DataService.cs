@@ -14,7 +14,7 @@ namespace Tyuiu.MaslennikovVA.Sprint5.Task5.V29.Lib
                 int max;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if (!line.Contains(",")) 
+                    if (!line.Contains(",") && !line.Contains("."))
                     {
                         max = Convert.ToInt32(line);
                         if (max % 100 == max && max % 10 != max)
