@@ -14,7 +14,7 @@ namespace Tyuiu.MaslennikovVA.Sprint5.Task0.V26.Lib
     {
         public string SaveToFileTextData(int x)
         {
-            string path = $@"{Path.Combine("OutPutFileTask0.txt")}";
+            string path = Path.GetTempFileName();
 
             double y = 0.7 * Math.Pow(x, 3) + 1.52 * Math.Pow(x, 2);
 
