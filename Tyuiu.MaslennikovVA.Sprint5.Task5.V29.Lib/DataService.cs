@@ -6,17 +6,17 @@ namespace Tyuiu.MaslennikovVA.Sprint5.Task5.V29.Lib
     {
         public double LoadFromDataFile(string path)
         {
-            int min = 99;
+            double min = 99;
             double res = 0;
             using (StreamReader reader = new StreamReader(path))
             {
                 string line;
-                int max;
+                double max;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    if (!line.Contains(",") && !line.Contains("."))
+                    max = Convert.ToDouble(line);
+                    if (max - Math.Round(max) == 0)
                     {
-                        max = Convert.ToInt32(line);
                         if (max % 100 == max && max % 10 != max)
                         {
                             if (max < min)
