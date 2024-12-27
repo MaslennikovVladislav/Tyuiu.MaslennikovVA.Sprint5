@@ -9,6 +9,10 @@ namespace Tyuiu.MaslennikovVA.Sprint5.Task7.V12.Lib
             int count = 0;
             StreamReader reader = new StreamReader(path + @"\InPutDataFileTask7V0.txt");
             string line = reader.ReadLine().ToUpper();
+            FileInfo fileInfo = new FileInfo(path + @"\OutPutDataFileTask7V0.txt");
+            if  (!fileInfo.Exists) 
+                File.Create(path + @"\OutPutDataFileTask7V0.txt" );
+
             StreamWriter writer = new StreamWriter(path + @"\OutPutDataFileTask7V0.txt");
             writer.WriteLine(line);
             reader.Close();
