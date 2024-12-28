@@ -26,7 +26,7 @@ namespace Tyuiu.MaslennikovVA.Sprint5.Task7.V12
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            string path = Directory.GetCurrentDirectory();
+            string path = $@"{Directory.GetCurrentDirectory()}\InPutDataFileTask7V0.txt";
 
             Console.WriteLine("Данные находятся в файле: " + path);
             
