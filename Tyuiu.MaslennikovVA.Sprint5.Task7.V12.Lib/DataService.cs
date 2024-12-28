@@ -13,7 +13,7 @@ namespace Tyuiu.MaslennikovVA.Sprint5.Task7.V12.Lib
             //if (!fileInfo.Exists)
             //    File.Create(path + @"\OutPutFileTask7V0.txt");
 
-            StreamWriter writer = new StreamWriter($@"{Directory.GetCurrentDirectory()}\OutPutDataFileTask7V0.txt"); 
+            StreamWriter writer = new StreamWriter($@"{Directory.GetCurrentDirectory()}/OutPutDataFileTask7V0.txt"); 
             writer.WriteLine(line);
             reader.Close();
             writer.Close();
