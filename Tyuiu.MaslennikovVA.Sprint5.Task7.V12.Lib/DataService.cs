@@ -1,4 +1,5 @@
-﻿using tyuiu.cources.programming.interfaces.Sprint5;
+﻿using System.Text.RegularExpressions;
+using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.MaslennikovVA.Sprint5.Task7.V12.Lib
 {
@@ -7,19 +8,31 @@ namespace Tyuiu.MaslennikovVA.Sprint5.Task7.V12.Lib
         public string LoadDataAndSave(string path)
         {
 
-            StreamReader reader = new StreamReader(path);
-            string line = reader.ReadLine().ToUpper();
-            //FileInfo fileInfo = new FileInfo(path + @"\OutPutDataFileTask7V0.txt");
-            //if (!fileInfo.Exists)
-            //    File.Create(path + @"\OutPutFileTask7V0.txt");
+            string pathSaveFile = Path.Combine(Path.GetTempPath(), "OutPutDataFileTask7V12.txt");
 
-            StreamWriter writer = new StreamWriter($@"{Directory.GetCurrentDirectory()}/OutPutDataFileTask7V0.txt"); 
-            writer.WriteLine(line);
-            reader.Close();
-            writer.Close();
+            FileInfo fileInfo = new FileInfo(pathSaveFile);
+            bool fileExists = fileInfo.Exists;
 
+            if (fileExists)
+            {
+                File.Delete(pathSaveFile);
+            }
 
-            return line;
+            string strLine = "";
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string? line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    
+                        strLine = line.ToUpper();
+
+                    File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
+
+                    strLine = "";
+                }
+            }
+            return pathSaveFile;
         }
     }
 }
